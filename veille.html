@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille technologique – Alwenna PERRET | BTS SIO SISR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== MENU ========== -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">&lt;Alwenna PERRET /&gt;</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="alternance.html">Alternance</a></li>
+        <li><a href="veille.html">Veille</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cv.pdf" download="CvAlwennaPerret.pdf" class="nav-cv">⬇ CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section page">
+      <div class="container">
+        <h1 class="section-title">Veille technologique</h1>
+        <div class="veille-box">
+          <h2>Sujet : la cybersécurité face aux ransomwares</h2>
+          <p>Ma veille porte sur l'évolution des attaques par rançongiciel et sur les moyens
+            de s'en protéger (sauvegardes 3-2-1, segmentation réseau, MFA, EDR).</p>
+          <p><strong>Outils utilisés :</strong> flux RSS (Feedly), alertes Google, newsletters.</p>
+          <p><strong>Sources :</strong> CERT-FR, ANSSI, Cybermalveillance.gouv.fr, LeMagIT, IT-Connect.</p>
+        </div>
+
+        <h2 class="sub-title">Articles marquants</h2>
+        <div class="articles">
+          <article class="article-card">
+            <span class="timeline-date">13/06/2026</span>
+            <h3>6 failles de sécurité à connaître impérativement</h3>
+            <p>Les failles dangeureuses à ne pas ignorer.</p>
+            <a href="https://www.cyberuniversity.com/post/failles-de-securite-connaitre" target="_blank" rel="noopener">Lire la source →</a>
+          </article>
+          <article class="article-card">
+            <span class="timeline-date">17/11/2026</span>
+            <h3>PostgreSQL a corrigé 52 failles de sécurité, dont une vieille de 22 ans (CVE-2026-6460) </h3>
+            <p>PostgreSQL à corriger de nombreuses failles connues dont une qui date de 22 ans.</p>
+            <a href="https://www.it-connect.fr/postgresql-52-failles-cve-2026-6460-mise-a-jour/" target="_blank" rel="noopener">Lire la source →</a>
+          </article>
+          <article class="article-card">
+            <span class="timeline-date">22/10/2026</span>
+            <h3>AlerteCyber : Failles de sécurité critiques dans PHP</h3>
+            <p>Permet la prise de contrôle à distance des équipements vulnérables, la perturbation ou l’interruption de leur fonctionnement, ou encore le vol voire la destruction d’informations confidentielles, et éventuellement l’accès au système d’information interne de l’organisation concernée, etc. </p>
+            <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/alerte-cyber-failles-de-securite-critiques-dans-php-202610" target="_blank" rel="noopener">Lire la source →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <button class="back-top" id="backTop" aria-label="Retour en haut">↑</button>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Alwenna PERRET – Portfolio BTS SIO SISR</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

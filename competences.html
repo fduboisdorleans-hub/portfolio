@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compétences – Alwenna PERRET | BTS SIO SISR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== MENU ========== -->
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">&lt;Alwenna PERRET /&gt;</a>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="alternance.html">Alternance</a></li>
+        <li><a href="veille.html">Veille</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="CvAlwennaPerret.pdf" download="CvAlwennaPerret.pdf" class="nav-cv">⬇ CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="section page">
+      <div class="container">
+        <h1 class="section-title">Compétences</h1>
+
+        <h2 class="sub-title">Compétences techniques</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>🖧 Réseaux</h3>
+            <div class="skill"><span>Cisco (VLAN, routage)</span><div class="bar"><div class="fill" data-level="60"></div></div></div>
+            <div class="skill"><span>TCP/IP, DHCP, DNS</span><div class="bar"><div class="fill" data-level="70"></div></div></div>
+            <div class="skill"><span>Packet Tracer </span><div class="bar"><div class="fill" data-level="60"></div></div></div>
+          </div>
+          <div class="skill-card">
+            <h3>🖥️ Systèmes</h3>
+            <div class="skill"><span>Windows Server / Active Directory</span><div class="bar"><div class="fill" data-level="70"></div></div></div>
+            <div class="skill"><span>Linux (Debian, Ubuntu)</span><div class="bar"><div class="fill" data-level="80"></div></div></div>
+            <div class="skill"><span>Virtualisation (Proxmox, VMware)</span><div class="bar"><div class="fill" data-level="60"></div></div></div>
+          </div>
+          <div class="skill-card">
+            <h3>🔒 Sécurité</h3>
+            <div class="skill"><span>Pare-feu pfSense</span><div class="bar"><div class="fill" data-level="65"></div></div></div>
+            <div class="skill"><span>VPN (OpenVPN, WireGuard)</span><div class="bar"><div class="fill" data-level="50"></div></div></div>
+            <div class="skill"><span>Sauvegarde / PRA</span><div class="bar"><div class="fill" data-level="80"></div></div></div>
+          </div>
+          <div class="skill-card">
+            <h3>💻 Programmation & outils</h3>
+            <div class="skill"><span>HTML / CSS / JavaScript</span><div class="bar"><div class="fill" data-level="65"></div></div></div>
+            <div class="skill"><span>Scripts Bash / PowerShell</span><div class="bar"><div class="fill" data-level="70"></div></div></div>
+            <div class="skill"><span>GLPI, Zabbix, Git</span><div class="bar"><div class="fill" data-level="85"></div></div></div>
+          </div>
+        </div>
+
+        <h2 class="sub-title">Compétences du référentiel BTS SIO (Bloc 1)</h2>
+        <div class="ref-grid">
+          <div class="ref-card"><span class="ref-num">B1.1</span>Gérer le patrimoine informatique</div>
+          <div class="ref-card"><span class="ref-num">B1.2</span>Répondre aux incidents et aux demandes d'assistance et d'évolution</div>
+          <div class="ref-card"><span class="ref-num">B1.3</span>Développer la présence en ligne de l'organisation</div>
+          <div class="ref-card"><span class="ref-num">B1.4</span>Travailler en mode projet</div>
+          <div class="ref-card"><span class="ref-num">B1.5</span>Mettre à disposition des utilisateurs un service informatique</div>
+          <div class="ref-card"><span class="ref-num">B1.6</span>Organiser son développement professionnel</div>
+        </div>
+
+        <h2 class="sub-title">Savoir-être</h2>
+        <div class="soft-grid">
+          <span class="soft">Rigueur</span><span class="soft">Travail en équipe</span>
+          <span class="soft">Curiosité</span><span class="soft">Sens du service</span><span class="soft">Communication</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <button class="back-top" id="backTop" aria-label="Retour en haut">↑</button>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Alwenna PERRET – Portfolio BTS SIO SISR</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
