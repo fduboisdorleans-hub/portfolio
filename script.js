@@ -1,103 +1,94 @@
+/* =========================================================
+   Portfolio Franck DUBOIS--DORLEANS – script principal
+   ========================================================= */
+
+/* ---------- 1. DONNÉES DES PROJETS ----------
+   Pour ajouter une documentation PDF : mettre le fichier dans /docs
+   et renseigner doc: "docs/nom-du-fichier.pdf" (sinon laisser null). */
 const projets = [
+  {
+    titre: "Support utilisateurs et ticketing GLPI – Biotope",
+    icone: "🎫",
+    categorie: "support",
+    resume: "Traitement des incidents informatiques des utilisateurs avec l'outil de ticketing GLPI.",
+    tags: ["GLPI", "Support N1", "Windows", "Parc informatique"],
+    contexte: "Expérience en entreprise chez Biotope (2025-2026), au sein du service informatique.",
+    etapes: [
+      "Réception et qualification des tickets dans GLPI",
+      "Diagnostic des incidents et dépannage de premier niveau",
+      "Assistance aux utilisateurs et suivi jusqu'à la résolution",
+      "Aide à la configuration de postes et gestion du lab"
+    ],
+    competences: ["B1.1", "B1.2", "B1.5"],
+    doc: null
+  },
+  {
+    titre: "Segmentation réseau avec VLAN",
+    icone: "🖧",
+    categorie: "reseau",
+    resume: "Création de VLAN et routage inter-VLAN sur Cisco Packet Tracer.",
+    tags: ["Cisco", "VLAN", "Packet Tracer", "802.1Q"],
+    contexte: "TP de routage et commutation : séparer les services d'une entreprise (Administration, Comptabilité, Invités).",
+    etapes: [
+      "Conception du plan d'adressage IP",
+      "Création des VLAN et configuration des ports trunk / access",
+      "Routage inter-VLAN (router-on-a-stick)",
+      "Tests de connectivité"
+    ],
+    competences: ["B1.1", "B1.4", "B1.5"],
+    doc: null
+  },
   {
     titre: "Mise en place d'un Active Directory",
     icone: "🗂️",
     categorie: "systeme",
     resume: "Installation d'un contrôleur de domaine Windows Server avec DNS, DHCP et GPO.",
     tags: ["Windows Server", "AD DS", "GPO", "DNS"],
-    contexte: "Projet réalisé en TP pour simuler le réseau d'une PME de 30 salariés.",
+    contexte: "TP d'administration de serveurs simulant le réseau d'une PME.",
     etapes: [
-      "Installation de Windows Server 2022 sur une VM",
+      "Installation de Windows Server sur une machine virtuelle",
       "Promotion en contrôleur de domaine et création des OU",
       "Configuration des rôles DNS et DHCP",
-      "Création de GPO (fond d'écran, lecteurs réseau, restrictions)"
+      "Création de GPO (lecteurs réseau, restrictions)"
     ],
     competences: ["B1.1", "B1.5"],
-    doc: "docs/active-directory.pdf"
+    doc: null
   },
   {
-    titre: "Segmentation réseau avec VLAN",
-    icone: "🖧",
-    categorie: "reseau",
-    resume: "Création de VLAN et routage inter-VLAN sur des équipements Cisco.",
-    tags: ["Cisco", "VLAN", "Packet Tracer", "802.1Q"],
-    contexte: "Séparer les services (Administration, Comptabilité, Invités) d'une entreprise.",
-    etapes: [
-      "Conception du plan d'adressage IP",
-      "Création des VLAN et configuration des ports trunk/access",
-      "Routage inter-VLAN (router-on-a-stick)",
-      "Tests de connectivité et ACL"
-    ],
-    competences: ["B1.1", "B1.4", "B1.5"],
-    doc: "docs/vlan.pdf"
-  },
-  {
-    titre: "Gestion de parc avec GLPI",
-    icone: "📋",
+    titre: "Ce portfolio",
+    icone: "🌊",
     categorie: "systeme",
-    resume: "Déploiement de GLPI et de l'agent d'inventaire pour gérer le parc et les tickets.",
-    tags: ["GLPI", "Debian", "Apache", "MariaDB"],
-    contexte: "Centraliser l'inventaire matériel et le suivi des incidents.",
+    resume: "Conception de mon site portfolio en HTML, CSS et JavaScript, versionné sur GitHub.",
+    tags: ["HTML", "CSS", "JavaScript", "Git"],
+    contexte: "Présenter mon parcours et mes compétences pour l'épreuve du BTS et ma recherche d'alternance.",
     etapes: [
-      "Installation d'un serveur LAMP sous Debian",
-      "Installation et configuration de GLPI",
-      "Déploiement de l'agent GLPI sur les postes clients",
-      "Création des catégories de tickets et des profils"
+      "Structure des pages en HTML sémantique",
+      "Thème graphique personnalisé et responsive en CSS",
+      "Filtres de projets, animations et formulaire en JavaScript",
+      "Versionnement et publication avec Git / GitHub Pages"
     ],
-    competences: ["B1.1", "B1.2"],
-    doc: "docs/glpi.pdf"
+    competences: ["B1.3", "B1.4", "B1.6"],
+    doc: null
   },
   {
-    titre: "Pare-feu pfSense et VPN",
+    titre: "Projet système et réseau sécurisé",
     icone: "🔒",
     categorie: "securite",
-    resume: "Sécurisation du réseau avec pfSense et accès distant via OpenVPN.",
-    tags: ["pfSense", "OpenVPN", "NAT", "Règles firewall"],
-    contexte: "Permettre aux salariés en télétravail d'accéder au réseau de façon sécurisée.",
+    resume: "Projet de BTS : concevoir une petite infrastructure en appliquant les bonnes pratiques de sécurité.",
+    tags: ["Sécurité", "Pare-feu", "Sauvegardes", "ANSSI"],
+    contexte: "Projet en cours dans le cadre du BTS SIO SISR, en lien avec le MOOC SecNumacadémie de l'ANSSI.",
     etapes: [
-      "Installation de pfSense avec interfaces WAN / LAN / DMZ",
-      "Définition des règles de filtrage",
-      "Configuration du serveur OpenVPN et export des profils clients",
-      "Tests depuis un poste externe"
-    ],
-    competences: ["B1.1", "B1.5"],
-    doc: "docs/pfsense.pdf"
-  },
-  {
-    titre: "Supervision avec Zabbix",
-    icone: "📊",
-    categorie: "reseau",
-    resume: "Surveillance des serveurs et équipements réseau avec alertes par mail.",
-    tags: ["Zabbix", "SNMP", "Linux", "Alerting"],
-    contexte: "Détecter les pannes avant qu'elles n'impactent les utilisateurs.",
-    etapes: [
-      "Installation du serveur Zabbix",
-      "Ajout des hôtes (agent Zabbix + SNMP)",
-      "Création de tableaux de bord",
-      "Configuration des alertes e-mail"
-    ],
-    competences: ["B1.2", "B1.5"],
-    doc: "docs/zabbix.pdf"
-  },
-  {
-    titre: "Infrastructure virtualisée Proxmox",
-    icone: "🧱",
-    categorie: "systeme",
-    resume: "Mise en place d'un hyperviseur Proxmox avec sauvegardes automatisées.",
-    tags: ["Proxmox", "KVM", "LXC", "Sauvegarde"],
-    contexte: "Mutualiser plusieurs serveurs sur une seule machine physique.",
-    etapes: [
-      "Installation de Proxmox VE",
-      "Création de VM et de conteneurs LXC",
-      "Configuration du stockage et du réseau (bridges)",
-      "Planification des sauvegardes"
+      "Analyse du besoin et schéma réseau",
+      "Mise en place des services et du filtrage",
+      "Politique de sauvegarde et de mots de passe",
+      "Rédaction de la documentation technique"
     ],
     competences: ["B1.1", "B1.4", "B1.5"],
-    doc: "docs/proxmox.pdf"
+    doc: null
   }
 ];
 
-/* ---------- 2. MENU : LIEN DE LA PAGE ACTUELLE EN VERT ---------- */
+/* ---------- 2. MENU : LIEN DE LA PAGE ACTUELLE ---------- */
 const pageActuelle = location.pathname.split("/").pop() || "index.html";
 document.querySelectorAll(".nav-links a").forEach(a => {
   if (a.getAttribute("href") === pageActuelle) a.classList.add("active");
@@ -107,20 +98,23 @@ document.querySelectorAll(".nav-links a").forEach(a => {
 const burger = document.getElementById("burger");
 const navLinks = document.getElementById("navLinks");
 burger.addEventListener("click", () => {
-  burger.classList.toggle("open");
-  navLinks.classList.toggle("open");
+  const ouvert = navLinks.classList.toggle("open");
+  burger.classList.toggle("open", ouvert);
+  burger.setAttribute("aria-expanded", ouvert);
 });
 
-/* ---------- 4. PAGE PROJETS : affichage, filtres et fenêtre de détail ---------- */
+/* ---------- 4. PAGE PROJETS ---------- */
 const grid = document.getElementById("projectsGrid");
 
 if (grid) {
+  const tagsHTML = tags => tags.map(t => `<span class="tag">${t}</span>`).join("");
+
   grid.innerHTML = projets.map((p, i) => `
     <article class="project-card reveal" data-cat="${p.categorie}">
       <div class="project-icon">${p.icone}</div>
       <h3>${p.titre}</h3>
       <p>${p.resume}</p>
-      <div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div>
+      <div class="tags">${tagsHTML(p.tags)}</div>
       <button class="btn btn-outline" data-index="${i}">Voir le détail</button>
     </article>
   `).join("");
@@ -148,12 +142,13 @@ if (grid) {
     modalBody.innerHTML = `
       <h3>${p.icone} ${p.titre}</h3>
       <h4>Contexte</h4><p>${p.contexte}</p>
-      <h4>Étapes réalisées</h4><ul>${p.etapes.map(e => `<li>${e}</li>`).join("")}</ul>
+      <h4>Étapes réalisées</h4><ul>${p.etapes.map(x => `<li>${x}</li>`).join("")}</ul>
       <h4>Compétences mobilisées</h4><p>${p.competences.join(" • ")}</p>
-      <h4>Technologies</h4><div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div>
-      <a href="${p.doc}" download class="btn btn-primary">⬇ Télécharger la documentation</a>
+      <h4>Technologies</h4><div class="tags">${tagsHTML(p.tags)}</div>
+      ${p.doc ? `<a href="${p.doc}" download class="btn btn-primary">⬇ Télécharger la documentation</a>` : ""}
     `;
     modal.classList.add("open");
+    document.getElementById("modalClose").focus();
   });
 
   const fermerModal = () => modal.classList.remove("open");
@@ -162,59 +157,47 @@ if (grid) {
   document.addEventListener("keydown", e => { if (e.key === "Escape") fermerModal(); });
 }
 
-/* ---------- 5. PAGE ACCUEIL : effet "machine à écrire" ---------- */
+/* ---------- 5. ACCUEIL : effet "machine à écrire" ---------- */
 const typing = document.getElementById("typing");
 
 if (typing) {
-  const phrases = ["whoami", "ping 8.8.8.8", "systemctl status apache2", "show vlan brief"];
+  const phrases = ["whoami", "ipconfig /all", "ping 8.8.8.8", "glpi --tickets ouverts", "show vlan brief"];
   let iPhrase = 0, iLettre = 0, efface = false;
 
   function taper() {
     const phrase = phrases[iPhrase];
     typing.textContent = phrase.substring(0, iLettre);
-    if (!efface && iLettre < phrase.length) { iLettre++; setTimeout(taper, 100); }
+    if (!efface && iLettre < phrase.length) { iLettre++; setTimeout(taper, 90); }
     else if (!efface) { efface = true; setTimeout(taper, 1500); }
-    else if (iLettre > 0) { iLettre--; setTimeout(taper, 50); }
+    else if (iLettre > 0) { iLettre--; setTimeout(taper, 45); }
     else { efface = false; iPhrase = (iPhrase + 1) % phrases.length; setTimeout(taper, 300); }
   }
   taper();
 }
 
-/* ---------- 6. ANIMATIONS AU SCROLL (+ barres de compétences) ---------- */
-document.querySelectorAll(".section-title, .skill-card, .ref-card, .timeline-item, .veille-box, .about-grid, .home-card, .article-card")
+/* ---------- 6. ANIMATIONS AU SCROLL ---------- */
+document.querySelectorAll(".section-title, .skill-card, .ref-card, .timeline-item, .veille-box, .about-grid, .home-card, .article-card, .lang-grid .card, .search-box")
   .forEach(el => el.classList.add("reveal"));
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add("visible");
-    entry.target.querySelectorAll(".fill").forEach(f => f.style.width = f.dataset.level + "%");
-    observer.unobserve(entry.target);
-  });
-}, { threshold: 0.15 });
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+}
 
 /* ---------- 7. BOUTON RETOUR EN HAUT ---------- */
 const backTop = document.getElementById("backTop");
 window.addEventListener("scroll", () => backTop.classList.toggle("show", window.scrollY > 400));
 backTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-/* ---------- 8. TÉLÉCHARGEMENT DU CV ---------- */
-// Vérifie que cv.pdf existe avant de lancer le téléchargement (sur un site en ligne)
-document.querySelectorAll('a[href="cv.pdf"]').forEach(lien => {
-  lien.addEventListener("click", async e => {
-    if (location.protocol === "file:") return; // en local, on laisse faire le navigateur
-    try {
-      const rep = await fetch("cv.pdf", { method: "HEAD" });
-      if (!rep.ok) throw new Error();
-    } catch {
-      e.preventDefault();
-      alert("Le CV n'est pas disponible pour le moment.");
-    }
-  });
-});
-
-/* ---------- 9. PAGE CONTACT : vérification du formulaire ---------- */
+/* ---------- 8. PAGE CONTACT : formulaire -> messagerie ---------- */
 const form = document.getElementById("contactForm");
 
 if (form) {
@@ -237,12 +220,12 @@ if (form) {
     }
     const sujet = encodeURIComponent("Contact portfolio – " + nom);
     const corps = encodeURIComponent(message + "\n\n" + nom + " (" + email + ")");
-    window.location.href = `mailto:prenom.nom@email.com?subject=${sujet}&body=${corps}`;
+    window.location.href = `mailto:fduboisdorleans@gmail.com?subject=${sujet}&body=${corps}`;
     msg.textContent = "Merci ! Votre messagerie va s'ouvrir.";
     msg.className = "form-msg success";
     form.reset();
   });
 }
 
-/* ---------- 10. ANNÉE DANS LE PIED DE PAGE ---------- */
+/* ---------- 9. ANNÉE DANS LE PIED DE PAGE ---------- */
 document.getElementById("year").textContent = new Date().getFullYear();
