@@ -238,6 +238,9 @@ img { max-width: 100%; display: block; }
 #modalBody p, #modalBody li { color: var(--muted); }
 #modalBody ul { padding-left: 1.2rem; }
 #modalBody .btn { margin-top: 1.5rem; }
+#modalBody ul.comp-list { list-style: none; padding-left: 0; display: grid; gap: 0.5rem; }
+#modalBody .comp-list li { display: flex; gap: 0.7rem; align-items: center; }
+#modalBody .comp-list .ref-num { font-size: 0.75rem; }
 
 /* ---------- PARCOURS / TIMELINE ---------- */
 .timeline { position: relative; padding-left: 2rem; display: grid; gap: 1.5rem; }
