@@ -11,7 +11,7 @@ const projets = [
     icone: "🎫",
     categorie: "support",
     resume: "Traitement des incidents informatiques des utilisateurs avec l'outil de ticketing GLPI.",
-    tags: ["GLPI", "Support N1", "Windows", "Parc informatique"],
+    tags: ["GLPI", "Support niveau 1", "Windows", "Parc informatique"],
     contexte: "Expérience en entreprise chez Biotope (2025-2026), au sein du service informatique.",
     etapes: [
       "Réception et qualification des tickets dans GLPI",
@@ -88,6 +88,16 @@ const projets = [
   }
 ];
 
+/* Noms officiels des compétences du Bloc 1 du BTS SIO */
+const nomsCompetences = {
+  "B1.1": "Gérer le patrimoine informatique",
+  "B1.2": "Répondre aux incidents et aux demandes d'assistance et d'évolution",
+  "B1.3": "Développer la présence en ligne de l'organisation",
+  "B1.4": "Travailler en mode projet",
+  "B1.5": "Mettre à disposition des utilisateurs un service informatique",
+  "B1.6": "Organiser son développement professionnel"
+};
+
 /* ---------- 2. MENU : LIEN DE LA PAGE ACTUELLE ---------- */
 const pageActuelle = location.pathname.split("/").pop() || "index.html";
 document.querySelectorAll(".nav-links a").forEach(a => {
@@ -143,7 +153,7 @@ if (grid) {
       <h3>${p.icone} ${p.titre}</h3>
       <h4>Contexte</h4><p>${p.contexte}</p>
       <h4>Étapes réalisées</h4><ul>${p.etapes.map(x => `<li>${x}</li>`).join("")}</ul>
-      <h4>Compétences mobilisées</h4><p>${p.competences.join(" • ")}</p>
+      <h4>Compétences mobilisées</h4><ul class="comp-list">${p.competences.map(c => `<li><span class="ref-num">${c}</span>${nomsCompetences[c]}</li>`).join("")}</ul>
       <h4>Technologies</h4><div class="tags">${tagsHTML(p.tags)}</div>
       ${p.doc ? `<a href="${p.doc}" download class="btn btn-primary">⬇ Télécharger la documentation</a>` : ""}
     `;
@@ -157,25 +167,7 @@ if (grid) {
   document.addEventListener("keydown", e => { if (e.key === "Escape") fermerModal(); });
 }
 
-/* ---------- 5. ACCUEIL : effet "machine à écrire" ---------- */
-const typing = document.getElementById("typing");
-
-if (typing) {
-  const phrases = ["whoami", "ipconfig /all", "ping 8.8.8.8", "glpi --tickets ouverts", "show vlan brief"];
-  let iPhrase = 0, iLettre = 0, efface = false;
-
-  function taper() {
-    const phrase = phrases[iPhrase];
-    typing.textContent = phrase.substring(0, iLettre);
-    if (!efface && iLettre < phrase.length) { iLettre++; setTimeout(taper, 90); }
-    else if (!efface) { efface = true; setTimeout(taper, 1500); }
-    else if (iLettre > 0) { iLettre--; setTimeout(taper, 45); }
-    else { efface = false; iPhrase = (iPhrase + 1) % phrases.length; setTimeout(taper, 300); }
-  }
-  taper();
-}
-
-/* ---------- 6. ANIMATIONS AU SCROLL ---------- */
+/* ---------- 5. ANIMATIONS AU SCROLL ---------- */
 document.querySelectorAll(".section-title, .skill-card, .ref-card, .timeline-item, .veille-box, .about-grid, .home-card, .article-card, .lang-grid .card, .search-box")
   .forEach(el => el.classList.add("reveal"));
 
@@ -192,12 +184,12 @@ if ("IntersectionObserver" in window) {
   document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
 }
 
-/* ---------- 7. BOUTON RETOUR EN HAUT ---------- */
+/* ---------- 6. BOUTON RETOUR EN HAUT ---------- */
 const backTop = document.getElementById("backTop");
 window.addEventListener("scroll", () => backTop.classList.toggle("show", window.scrollY > 400));
 backTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-/* ---------- 8. PAGE CONTACT : formulaire -> messagerie ---------- */
+/* ---------- 7. PAGE CONTACT : formulaire -> messagerie ---------- */
 const form = document.getElementById("contactForm");
 
 if (form) {
@@ -227,5 +219,5 @@ if (form) {
   });
 }
 
-/* ---------- 9. ANNÉE DANS LE PIED DE PAGE ---------- */
+/* ---------- 8. ANNÉE DANS LE PIED DE PAGE ---------- */
 document.getElementById("year").textContent = new Date().getFullYear();

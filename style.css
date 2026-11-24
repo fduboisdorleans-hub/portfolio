@@ -105,13 +105,6 @@ img { max-width: 100%; display: block; }
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 90' preserveAspectRatio='none'%3E%3Cpath fill='%23061a2e' d='M0 40 C 240 90 480 0 720 40 S 1200 80 1440 30 V90 H0Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
 }
 .hero-content { position: relative; z-index: 1; max-width: 760px; }
-.terminal {
-  font-family: var(--mono); font-size: 0.95rem; color: var(--cyan);
-  background: rgba(0, 0, 0, 0.3); border: 1px solid var(--card-border);
-  display: inline-block; padding: 0.4rem 0.9rem; border-radius: 8px; margin-bottom: 1.6rem;
-}
-.cursor { animation: blink 1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
 
 .hero h1 { font-size: clamp(1.9rem, 6.5vw, 4rem); line-height: 1.05; letter-spacing: -0.03em; font-weight: 800; }
 .accent { color: var(--cyan); }
